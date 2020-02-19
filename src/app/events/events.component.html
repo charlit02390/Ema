@@ -1,0 +1,21 @@
+<div class="event">
+    <div class="page-title row">
+        <h2 class="col-5">Eventos</h2>
+    </div>
+    <div class="products row">
+        <ul class="col-12">
+            <li class="row event-display">
+<!--                 <app-event-display [events]='events' 
+                (deleteEvent)="deleteEvent($event)" 
+                (editEvent)="editEvent($event)" class="col-12 card">
+                </app-event-display>
+ -->            </li>
+        </ul>
+        <ul class = "col-12 offset-1">
+            <app-event-form (addEvent)="addEvent($event)" (editEvent)="editEventSave($event)" [selectedEvent]="selectedEvent" [canAdd]='!loading'></app-event-form>
+            <div *ngIf="loading">
+                loading...
+            </div>
+        </ul>
+    </div>
+</div>

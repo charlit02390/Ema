@@ -1,0 +1,55 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class=row>
+        <div class="form-group col-3">
+            <label class="center-block">Nombre
+                <input class="form-control" formControlName="name">
+            </label>
+   <!--          <div *ngIf="!userForm.controls['name'].valid && (userForm.controls['name'].dirty || userForm.controls['name'].touched)" class="alert alert-danger">
+                <div *ngIf="userForm.controls['name'].errors.required">
+                    El nombre es requerido
+                </div>
+                <div *ngIf="userForm.controls['name'].errors.minlength">
+                    El nombre debe tener al menos 2 digitos.
+                </div>
+                <div *ngIf="userForm.controls['name'].errors.maxlength">
+                    El nombre debe tener al maximo 7 digitos.
+                </div>
+                <div *ngIf="userForm.controls['name'].errors.forbiddenName">
+                    El nombre no puede ser Juan.
+                </div>
+            </div> -->
+        </div>
+        <div class="form-group col-3">
+            <label class="center-block">Fecha de Inicio
+                <!-- <mat-form-field>
+                  <mat-label>Elije una fecha</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="startDate">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field> -->
+                <!-- <input class="form-control" formControlName="startDate"> -->
+            </label>
+            <!-- <div *ngIf="userForm.controls['lastname'].errors && (userForm.controls['lastname'].dirty || userForm.controls['lastname'].touched)" class="alert alert-danger">
+                <div *ngIf="userForm.controls['lastname'].errors.required">
+                    El Apellido1 es requerido
+                </div>
+            </div> -->
+        </div>
+        <div class="form-group col-3">
+            <label class="center-block">Ubicacion
+                <input class="form-control" formControlName="location">
+            </label>
+            <!-- <div *ngIf="userForm.controls['age'].errors && (userForm.controls['age'].dirty || userForm.controls['age'].touched)" class="alert alert-danger">
+                <div *ngIf="userForm.controls['age'].errors.required">
+                    El Apellido1 es requerido
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div>
+        <button type="submit"
+        [disabled]="userForm.invalid " class="btn btn-success"><span *ngIf="!isEditing">Agregar</span><span *ngIf="isEditing">Editar</span></button> &nbsp;
+        <button type="reset" (click)="revert()" class="btn btn-danger">Revert</button>
+    </div>
+</form>
+
